@@ -1,0 +1,7 @@
+{
+  "name": "hcalc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
