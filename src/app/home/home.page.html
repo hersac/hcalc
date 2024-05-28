@@ -15,8 +15,12 @@
 
   <div class="content">
     <div class="tablero">
+      <div class="tablero__historico">
+        <ion-text class="tablero__historico__formula">10 + 5</ion-text>
+        <ion-text class="tablero__historico__resultado">15</ion-text>
+      </div>
       <div class="tablero__formula">
-        <ion-text>10 + 5</ion-text>
+        <ion-text>{{ formula }}</ion-text>
       </div>
       <div class="tablero__resultado">
         <ion-text>15</ion-text>
@@ -26,7 +30,14 @@
     <div class="board">
       @for (boton of botones; track boton){
       <div class="board__botones">
-        <ion-button expand="full" fill="outline" shape="round" class="board__botones__buton">{{ boton }}</ion-button>
+        <ion-button fill="outline" shape="round" size="default " class="board__botones__buton" (click)="anotarValor(boton)">
+          @if(boton === "<"){
+            <ion-icon name="backspace-outline"></ion-icon>
+          }
+          @else {
+            {{ boton }}
+          }
+        </ion-button>
       </div>
       }
     </div>
